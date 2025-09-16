@@ -3,8 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hello World</title>
+    <script>
+      async function fetchApi() {
+        try {
+          const response = await fetch("/api");
+          const data = await response.text();
+          document.getElementById("api-result").textContent = data;
+        } catch (err) {
+          document.getElementById("api-result").textContent = "Error: " + err;
+        }
+      }
+      window.onload = fetchApi;
+    </script>
   </head>
   <body>
     Hello World
+    <div id="api-result"></div>
   </body>
 </html>
