@@ -46,5 +46,4 @@ resource "aws_cloudfront_distribution" "cloudfront_poc" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
-
 }
