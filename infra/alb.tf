@@ -1,7 +1,6 @@
 resource "aws_lb" "cf_poc" {
   name               = "cf-poc"
   load_balancer_type = "application"
-  internal           = true
   subnets            = data.aws_subnets.default.ids
   security_groups    = [aws_security_group.cf_poc_alb.id]
 }

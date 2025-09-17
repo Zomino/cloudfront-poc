@@ -45,7 +45,7 @@ resource "aws_cloudfront_distribution" "cf_poc" {
   }
   ordered_cache_behavior {
     target_origin_id         = "cf_poc_alb_origin"
-    path_pattern             = "/api/*"
+    path_pattern             = "/api*"
     allowed_methods          = ["GET", "HEAD", "OPTIONS", "PUT", "PATCH", "POST", "DELETE"]
     cached_methods           = ["GET", "HEAD", "OPTIONS"]
     cache_policy_id          = data.aws_cloudfront_cache_policy.caching_disabled.id
